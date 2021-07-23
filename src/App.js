@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 
 function Card(props) {
   return (
-    <div>
-      <h4>{props.beers.name}</h4>
-      <p>{props.beers.abv}</p>
-      <p>{props.beers.boil_volume.value}</p>
-      <p>{props.beers.first_brewed}</p>
-      <img src={props.beers.image_url} alt="beer"></img>
+    <div className="cont">
+      <div>
+        <h4>{props.beers.name}</h4>
+        <p>{props.beers.abv}</p>
+        <p>{props.beers.boil_volume.value}</p>
+        <p>{props.beers.first_brewed}</p>
+        <img src={props.beers.image_url} alt="beer"></img>
+      </div>
     </div>
   );
 }
