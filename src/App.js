@@ -3,7 +3,21 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-function BeerCard() {}
+function BeerCard(props) {
+  let { BeerId } = useParams();
+
+  const [beerDisplay, setBeerDisplay] = useState({});
+
+  useEffect(function () {
+    fetch("https://api.punkapi.com/v2/beers")
+      .then(function (response) {
+        return response.json();
+      })
+      .then((data) => {
+        setBeerDisplay(data);
+      });
+  }, []);
+}
 
 function Card(props) {
   return (
