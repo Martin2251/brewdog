@@ -1,15 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+function BeerCard() {}
 
 function Card(props) {
   return (
     <div className="cont">
       <div>
         <h4>{props.beers.name}</h4>
-        <p>{props.beers.abv}</p>
-        <p>{props.beers.boil_volume.value}</p>
-        <p>{props.beers.first_brewed}</p>
         <img src={props.beers.image_url} alt="beer"></img>
       </div>
     </div>
@@ -30,11 +30,13 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {listBeers.map(function (beers) {
-        return <Card beers={beers}></Card>;
-      })}
-    </div>
+    <Router>
+      <div className="App">
+        {listBeers.map(function (beers) {
+          return <Card beers={beers}></Card>;
+        })}
+      </div>
+    </Router>
   );
 }
 
