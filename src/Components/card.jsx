@@ -1,17 +1,30 @@
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import styled from "styled-components";
 
 function Card(props) {
   const id = props.id;
   return (
-    <div className="cont">
+    <div className="card">
+      <div>
+        <h4>{props.beers.name}</h4>
+        <img src={props.beers.image_url} alt="beer"></img>
+      </div>
       <Link to={`/BeerCard/${id}`}>
-        <div>
-          <h4>{props.beers.name}</h4>
-          <img src={props.beers.image_url} alt="beer"></img>
-        </div>
+        <Button>More info</Button>
       </Link>
     </div>
   );
 }
 
 export default Card;
+
+const Button = styled.button`
+  display: inline-block;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  display: block;
+`;
