@@ -23,20 +23,11 @@ function MainContent() {
   }, []);
 
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/BeerCard/:id">
-            <BeerCard></BeerCard>
-          </Route>
-          <Route to="/">
-            <h1>Brewdog App</h1>
-            {listBeers.map(function (beers) {
-              return <Card beers={beers}></Card>;
-            })}
-          </Route>
-        </Switch>
-      </Router>
+    <div>
+      <h1>Brewdog App</h1>
+      {listBeers.map(function (beers) {
+        return <Card beers={beers}></Card>;
+      })}
     </div>
   );
 }
