@@ -25,9 +25,11 @@ function MainContent() {
   return (
     <div>
       <h1>Brewdog App</h1>
-      {listBeers.map(function (beers) {
-        return <Card beers={beers}></Card>;
-      })}
+      <div className="card-container">
+        {listBeers.map(function (beers) {
+          return <Card beers={beers}></Card>;
+        })}
+      </div>
     </div>
   );
 }
