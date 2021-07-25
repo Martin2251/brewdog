@@ -9,32 +9,7 @@ import {
   useParams,
 } from "react-router-dom";
 
-function BeerCard(props) {
-  let { id } = useParams();
-  const [beerData, setBeerData] = useState([]);
-
-  useEffect(
-    function () {
-      fetch(`https://api.punkapi.com/v2/beers/${id}`)
-        .then(function (response) {
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-          setBeerData(data);
-        });
-    },
-    [id]
-  );
-
-  return (
-    <div>
-      <h1>{beerData.id}</h1>
-    </div>
-  );
-}
-
-function App() {
+function MainContent() {
   const [listBeers, setListBeers] = useState([]);
 
   useEffect(function () {
@@ -66,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default MainContent;
