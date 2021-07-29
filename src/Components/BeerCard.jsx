@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -8,7 +7,7 @@ import {
   useParams,
 } from "react-router-dom";
 
-function BeerCard(props) {
+function BeerCard() {
   let { id } = useParams();
   const [beerData, setBeerData] = useState([]);
 
@@ -28,7 +27,7 @@ function BeerCard(props) {
 
   return (
     <div>
-      <h1>{beerData.id}</h1>
+      <h1>hi</h1>
     </div>
   );
 }

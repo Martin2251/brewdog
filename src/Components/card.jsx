@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import styled from "styled-components";
 
 function Card(props) {
-  const id = props.id;
+  const id = props.beer.id;
   return (
     <div className="card">
       <div>
-        <h4>{props.beers.name}</h4>
-        <img src={props.beers.image_url} alt="beer"></img>
+        <h4>{props.beer.name}</h4>
+        <img src={props.beer.image_url} alt="beer"></img>
       </div>
       <Link to={`/BeerCard/${id}`}>
         <Button>More info</Button>

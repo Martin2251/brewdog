@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import styled from "styled-components";
 import Card from "./Components/card";
 import {
   BrowserRouter as Router,
@@ -26,8 +27,8 @@ function MainContent() {
     <div>
       <h1>Brewdog App</h1>
       <div className="card-container">
-        {listBeers.map(function (beers) {
-          return <Card beers={beers}></Card>;
+        {listBeers.map(function (beer) {
+          return <Card beer={beer}></Card>;
         })}
       </div>
     </div>

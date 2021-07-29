@@ -9,11 +9,15 @@ import {
   useParams,
 } from "react-router-dom";
 import MainContent from "./MainContent";
+import BeerCard from "./Components/BeerCard";
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/Components/BeerCard/:id" component={BeerCard}>
+          <BeerCard></BeerCard>
+        </Route>
         <Route path="/">
           <MainContent></MainContent>
         </Route>
